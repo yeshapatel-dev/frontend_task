@@ -1,0 +1,99 @@
+<!-- Part 1: 
+Create a table with the following specifications:
+
+Table Content: Student Grade Report
+Headers: Student ID, Name, Math, Science, English, History, Average, Grade
+Data: Include at least 6 students with realistic data
+Use proper table elements: <table>, <thead>, <tbody>, <th>, <tr>, <td>
+
+Add a descriptive <caption> element 
+Include scope attributes for accessibility -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade_Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table class="table-container">
+        <caption><h2 class="text-gredient">Student Grade Report</h2></caption>
+        <thead>
+            <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Math</th>
+                <th scope="col">Science</th>
+                <th scope="col">English</th>
+                <th scope="col">History</th>
+                <th scope="col">Average</th>
+                <th scope="col">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td class="text-alignment">Alax</td>
+                <td>90</td>
+                <td>86</td>
+                <td>85</td>
+                <td>75</td>
+                <td>84</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td class="text-alignment">Bob</td>
+                <td>80</td>
+                <td>76</td>
+                <td>80</td>
+                <td>64</td>
+                <td>75</td>
+                <td>B1</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td class="text-alignment">Chandler</td>
+                <td>88</td>
+                <td>85</td>
+                <td>86</td>
+                <td>85</td>
+                <td>86</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td class="text-alignment">David</td>
+                <td>70</td>
+                <td>88</td>
+                <td>86</td>
+                <td>90</td>
+                <td>84</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td class="text-alignment">Ema</td>
+                <td>60</td>
+                <td>66</td>
+                <td>70</td>
+                <td>62</td>
+                <td>65</td>
+                <td>B2</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td class="text-alignment">Freya</td>
+                <td>75</td>
+                <td>66</td>
+                <td>80</td>
+                <td>55</td>
+                <td>69</td>
+                <td>B2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+    max-width: 100%;
+    max-height: 100%;
+}
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1000px;
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    display: table;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+table,th,td {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+}
+th {
+    /* font-weight: bold; */
+    font-size: 1.2em;
+    color: honeydew;
+    background-color: #5F9EA0;
+}
+td {
+    font-size: 1em;
+    color: #2a2a2a;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #dcdcdc;
+}
+caption {
+    font-size:larger;
+    padding: 0px, 10px;
+    word-spacing: 2px;
+    letter-spacing: 3px;
+    color: #5F9EA0;
+    text-shadow: 2px 0 1px #2a2a2a, 0 -1px 1px darkgray;
+}
+.text-alignment {
+    text-align: left;
+}
+.table-container {
+    box-shadow: 0 0 8px #2a2a2a;
+}
+
+@media (max-width: 500px) {
+    table {
+        font-size: smaller;
+    }
+}
