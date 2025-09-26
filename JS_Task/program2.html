@@ -1,0 +1,45 @@
+<!-- Create a function that reverses a string but keeps numbers in their original positions.
+
+Example Input: "abc123def"  
+Expected Output: "fed123cba" -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse-String</title>
+</head>
+
+<body>
+    <h2>Reverse String but keep numbers in their original positions</h2>
+
+    <p id="demo"></p>
+    <script>
+        function reverseString(str) {
+            const arr = str.split('');
+            let left = 0;
+            let right = arr.length - 1;
+
+            while (left < right) {
+                if (isNaN(arr[left])) {
+                    if (isNaN(arr[right])) {
+                        // Swap characters
+                        [arr[left], arr[right]] = [arr[right], arr[left]];
+                        left++;
+                    }
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+            return arr.join('');
+        }
+        const inputString = "abc123def";
+        const result = reverseString(inputString);
+
+        document.getElementById("demo").innerHTML = "Input: " + inputString + "<br>Output: " + result;
+    </script>
+</body>
+
+</html>

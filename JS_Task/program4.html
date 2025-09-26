@@ -1,0 +1,30 @@
+<!-- Implement a Fibonacci function using memoization to improve performance for large numbers.  
+Example: fibonacci(10) should return 55  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <h2>Fibonacci</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function fibonacci(n) {
+            if (n <= 1) return n;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        const inputNumber = 10;
+        const result = fibonacci(inputNumber);
+
+        document.getElementById("demo").innerHTML = "Input: " + inputNumber + "<br>Output: " + result;
+    </script>
+</body>
+
+</html>
