@@ -1,0 +1,63 @@
+<!-- Write a function that takes an array of objects and returns an object counting how many times each property value appears. 
+ input = [
+  { color: "red", size: "M" },
+  { color: "blue", size: "M" },
+  { color: "red", size: "L" },
+  { color: "green", size: "S" }
+]
+output :
+{
+  red: 2, M: 2, blue: 1, L: 1, green: 1, S: 1
+} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Object</title>
+</head>
+
+<body>
+    <h2>Count Property Values in an Array of Objects</h2>
+    <p id="demo"></p>
+    <script>
+        function countValues(arr) {
+            countsObj = {};
+            for (let i in arr) {
+                for (let key in arr[i]) {
+                    let value = arr[i][key];
+                    if (countsObj[value]) {
+                        countsObj[value]++;
+                    } else {
+                        countsObj[value] = 1;
+                    }
+                }
+            }
+            return countsObj;
+        }
+
+        const inputArray = [{
+            color: "red",
+            size: "M"
+        }, {
+            color: "blue",
+            size: "M"
+        }, {
+            color: "red",
+            size: "L"
+        }, {
+            color: "green",
+            size: "S"
+        }];
+        const result = countValues(inputArray);
+        let output = '';
+        for (let [key, value] of Object.entries(result)) {
+            output += key + ": " + value + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = "Output: {" + output + "}";
+    </script>
+</body>
+
+</html>

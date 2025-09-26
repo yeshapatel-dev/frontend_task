@@ -1,0 +1,59 @@
+<!-- . Create a shopping cart system that calculates the total price with discounts and tax.
+ Requirements:
+Apply 10% discount if total > 10000  
+Apply 8% tax on final amount  
+Round to 2 decimal places  
+Example Input:
+[
+  { "name": "Laptop", "price": 80000, "quantity": 1 },
+  { "name": "Mouse", "price": 2500, "quantity": 2 }
+]-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <h2>Shopping Cart Total Price Calculation</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function calculateTotal(cart) {
+            let total = 0;
+
+            // Calculate total
+            for (let item of cart) {
+                total += item.price * item.quantity;
+            }
+            // Apply discount 
+            if (total > 10000) {
+                total *= 0.90;
+            }
+            // Apply tax
+            total += total * (0.08);
+
+            return total.toFixed(2);
+        }
+
+        const shoppingCart = [{
+            "name": "Laptop",
+            "price": 80000,
+            "quantity": 1
+        }, {
+            "name": "Mouse",
+            "price": 2500,
+            "quantity": 2
+        }];
+
+        const finalAmount = calculateTotal(shoppingCart);
+
+        document.getElementById("demo").innerHTML = "Final Amount: ₹" + finalAmount;
+    </script>
+</body>
+
+</html>
