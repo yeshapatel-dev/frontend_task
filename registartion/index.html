@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h2>Student Registration Form</h2>
+
+        <form id="studentForm" method="post" novalidate>
+            <!-- Name -->
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" minlength="2">
+            <div class="error-msg" id="firstNameError"></div>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" minlength="2">
+            <div class="error-msg" id="lastNameError"></div>
+
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+            <div class="error-msg" id="emailError"></div>
+
+            <!-- Phone -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" maxlength="10" data-pattern="^\d{10}$">
+            <div class="error-msg" id="phoneError"></div>
+
+            <!-- Postal Code -->
+            <label for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" name="postalCode" maxlength="6" data-pattern="^\d{6}$">
+            <div class="error-msg" id="postalCodeError"></div>
+
+            <!-- Student ID -->
+            <label for="studentId">Student ID</label>
+            <input type="text" id="studentId" name="studentId" maxlength="7" placeholder="STU1234" data-pattern="^STU\d{4}$">
+            <div class="error-msg" id="studentIdError"></div>
+
+            <!-- Profile Picture -->
+            <label for="profilePic">Profile Picture</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+            <div id="imgPreview"></div>
+            <div class="error-msg" id="profilePicError"></div>
+
+            <!-- Learning Support -->
+            <label><input type="checkbox" id="learningSupport" name="learningSupport">I need learning support</label>
+
+            <div id="supportDetailsWrapper" hidden>
+                <label for="supportDetails">Please describe the support you need</label>
+                <textarea id="supportDetails" name="supportDetails" rows="3" cols="5"></textarea>
+                <div class="error-msg" id="supportDetailsError"></div>
+            </div>
+
+            <!-- Terms -->
+            <label><input type="checkbox" id="terms" name="terms" required>I agree to the Terms and Conditions</label>
+            <div class="error-msg" id="termsError"></div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button type="reset" id="resetBtn">Reset</button>
+                <button type="submit" id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </main>
+    <script defer src="script.js"></script>
+</body>
+
+</html>
