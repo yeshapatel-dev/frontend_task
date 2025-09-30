@@ -145,36 +145,63 @@ document.addEventListener("DOMContentLoaded", function() {
     // submit
     form.onsubmit = function(event) {
         event.preventDefault();
-
+        // if (form.querySelector(".invalid")) {
+        //     event.preventDefault();
+        //     const firstInvalid = form.querySelector(".invalid");
+        //     if (firstInvalid && typeof firstInvalid.focus === "function") firstInvalid.focus();
+        //     alert("Please fix errors before submitting!");
+        //     return;
+        // }
         if (firstName.value.trim().length < 2) {
-            alert("First Name must be at least 2 characters long");
+            document.getElementById("firstNameError").textContent = "Must be at least 2 characters";
+            firstName.classList.add("invalid");
+            // alert("First Name must be at least 2 characters long");
             firstName.focus();
             return false;
         }
         if (lastName.value.trim().length < 2) {
-            alert("Last Name must be at least 2 characters long");
+            document.getElementById("lastNameError").textContent = "Must be at least 2 characters";
+            lastName.classList.add("invalid");
+            // alert("Last Name must be at least 2 characters long");
             lastName.focus();
             return false;
         }
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value.trim())) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address";
+            email.classList.add("invalid");
+            // alert("Please enter a valid Email address");
+            email.focus();
+            return false;
+        }
         if (!/^\d{10}$/.test(phone.value.trim())) {
-            alert("Please enter a valid Phone number (10 digits)");
+            document.getElementById("phoneError").textContent = "Please enter a valid phone number (10 digits)";
+            phone.classList.add("invalid");
+            // alert("Please enter a valid Phone number (10 digits)");
             phone.focus();
             return false;
         }
         if (!/^\d{6}$/.test(postalCode.value.trim())) {
-            alert("Please enter a valid postal code (6 digits)");
+            document.getElementById("postalCodeError").textContent = "Please enter a valid postal code (6 digits)";
+            postalCode.classList.add("invalid");
+            // alert("Please enter a valid postal code (6 digits)");
             postalCode.focus();
             return false;
         }
         if (!/^STU\d{4}$/.test(studentId.value.trim())) {
-            alert("Student ID must follow STU1234 pattern");
+            document.getElementById("studentIdError").textContent = "Student ID must follow the pattern STU1234";
+            studentId.classList.add("invalid");
+            // alert("Student ID must follow STU1234 pattern");
             studentId.focus();
             return false;
         }
         if (!terms.checked) {
-            alert("You must agree to the Terms and Conditions");
+            document.getElementById("termsError").textContent = "You must agree to the Terms and Conditions";
+            terms.classList.add("invalid");
+            // alert("You must agree to the Terms and Conditions");
+            terms.focus();
             return false;
         }
+
 
         // success
         alert("Thank you for registering, " + firstName.value + "!");
@@ -191,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return true;
 
     };
-
 
     // reset
     form.addEventListener("reset", function() {
